@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BugTracker.Models.IssueEntry>
+@{
+    ViewBag.Title = "MyIssues";
+}
+
+<h2>My Issues</h2>
+
+@{
+    ViewBag.Title = "IssuesByProject";
+}
+
+<table>
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Priority
+        </th>
+        <th>
+            Solved
+        </th>
+        <th>
+            Created By
+        </th>
+        <th>
+            Assigned To
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IssuePriority.PriorityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSolved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedTo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditIssueOnProject", "Issue", new { issueId = item.IssueEntryId }, null) |
+            @Html.ActionLink("Details", "Details", "Issue", new { issueId = item.IssueEntryId }, null) |
+            @Html.ActionLink("Delete", "Delete", "Issue", new { issueId = item.IssueEntryId }, null)
+        </td>
+    </tr>
+}
+
+</table>

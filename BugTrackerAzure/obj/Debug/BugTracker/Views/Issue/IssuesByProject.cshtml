@@ -1,0 +1,69 @@
+﻿@model BugTracker.ViewModels.IssueEntryByProjectViewModel
+           
+
+
+@{
+    ViewBag.Title = "Issues on this Project";
+}
+
+<h2>Issues on this project </h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateIssueOnProject", "Issue", new { projectId = Model.ProjectId }, null)
+</p>
+<table>
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Priority
+        </th>
+        <th>
+            Solved
+        </th>
+        <th>
+            Created By
+        </th>
+        <th>
+            Assigned To
+        </th>
+        <th>
+            Controls
+        </th>
+    </tr>
+
+@foreach (var item in Model.IssuesByProject) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IssuePriority.PriorityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSolved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedTo)
+        </td>
+        <td>
+            <div class="control-group">
+                <a href="@Url.Action("EditIssueOnProject", "Issue", new { issueId = item.IssueEntryId })"><img class="control-icon" src="../../Content/themes/base/images/theme_black_tools.png" /></a>
+                <a href="@Url.Action("Details", "Issue", new { issueId = item.IssueEntryId })"><img class="control-icon" src="../../Content/themes/base/images/theme_black_list.png" /></a>    
+                <a href="@Url.Action("Delete", "Issue", new { issueId = item.IssueEntryId })"><img class="control-icon" src="../../Content/themes/base/images/theme_black_trash.png" /></a>
+            </div>
+        </td>
+    </tr>
+}
+
+</table>

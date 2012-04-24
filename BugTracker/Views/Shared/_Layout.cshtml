@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/base/jquery.ui.all.css")" rel="stylesheet" type="text/css" media="screen" />
+    <link href="@Url.Content("~/Content/themes/base/jquery.ui.autocomplete.css")" rel="stylesheet" type="text/css" media="screen" />
+    <link href="@Url.Content("~/Content/themes/base/uniform.default.css")" rel="Stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.11.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.uniform.min.js")"></script>
+
+    <!-- Style the elements with uniform -->
+    <script type="text/javascript">
+        $(function () {
+            $("select, input, button, textarea").uniform();
+            $(".account-menu-top").click(function () {
+                $(".account-menu-dropdown-inner").toggle();
+                return false;
+            });
+        });
+        function getIssueCounterTask() {
+            $.ajax({
+                url: '/Issue/GetIssueCounter',
+                type: "POST",
+                dataType: "json",
+                success: function (data) {
+                    var counter = data["issueCount"];
+
+                    var issuecount = '<span id=\"issuecounter\">' + data["issueCount"] + '</span>';
+                    $("#issuecounter").replaceWith(issuecount);
+
+                    return data;
+                }
+            });
+        }
+            
+    
+    </script>
+
+</head>
+<body>
+    <div class="topbar group">
+    @if (Request.IsAuthenticated)
+    {
+        <span id="searchbox">
+        </span>
+        <div class="current-user group">
+            <div class="myissues">
+                <span id="issuecounter"></span>
+            </div>
+            <div class="account-name">
+                @User.Identity.Name
+            </div>
+            <div class="account-menu">
+                <div class="account-menu-top group">
+                    <img src="../Content/themes/base/images/theme_black_gear.png" class="account-menu-settings-icon" />
+                </div>
+                <!-- <div class="account-menu-dropdown" style="display: block;"> -->
+                    <div class="account-menu-dropdown-inner">
+                        <ul class="account-menu-links">
+                            <li><a href="#">Account settings</a> </li>
+                            <li><a href="#">Profile</a> </li>
+                            <li class="account-menu-logout"><a href="#">Sign off</a> </li>
+                        </ul>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </div>        
+    }
+    </div>
+    <div class="page">
+        <div id="header">
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            @RenderBody()
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+</body>
+</html>

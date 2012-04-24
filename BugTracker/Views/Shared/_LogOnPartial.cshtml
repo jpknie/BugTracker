@@ -1,0 +1,10 @@
+﻿@if(Request.IsAuthenticated) {
+    <text>Welcome <strong>@User.Identity.Name</strong>!
+    [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+    <script type="text/javascript">
+        setInterval(getIssueCounterTask, 10000);
+    </script>
+}
+else {
+    @:[ @Html.ActionLink("Log On", "LogOn", "Account") ]
+}

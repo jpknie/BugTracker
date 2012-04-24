@@ -1,0 +1,20 @@
+﻿@model BugTracker.Models.Project
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Project</legend>
+
+    <div class="display-label">ProjectName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProjectName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProjectId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

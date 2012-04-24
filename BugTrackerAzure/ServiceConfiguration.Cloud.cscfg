@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="BugTrackerAzure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*">
+  <Role name="BugTracker">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="jpknie" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEDzGuoILmam4Tiei1KbuB/owDQYJKoZIhvcNAQEBBQAEggEAnqNt5obIP7caqfFZfCyjcxIgwq7ZD2XDZ0zS2g1jwbu8KUmtX3QkUAXHDutOwr6QaRRvhZceq+mCQu8O+uNXRSLOpjRUJb4oZslv2m+LEwKPPMAi4F+otoPtBJ1SST37VJ3/bN2gTabElXKHvvZqYtq+7mEeB12uO4p41y9A+Wkj4E3tdfj5CTOi8m/6XktzcPcOExD0UuhncXmKt8TpO3X8dc0qS9bvfiCpkorm1o2FNBFSWy197i45DXh1uxw3I2i4ZlVlT7vE4X/0/PLPU1TI/sdQGOdZxAe4tDDluhtrE+PLszUTMP4v6+UE3Wf3Wd6JgETLMfI09ealEiLHGjAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECN7B2JFuNT4SgBDAp3eas38n2iZTd5sbnSX2" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2013-04-17T23:59:59.0000000+03:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="6FBF552469F56E5669505E4FDBCAC620EEC1A032" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

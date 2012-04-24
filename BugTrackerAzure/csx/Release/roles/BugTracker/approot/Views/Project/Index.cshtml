@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BugTracker.Models.Project>
+
+@{
+    ViewBag.Title = "Projects";
+}
+<script type="text/javascript" src="@Url.Content("~/Common/application.js")"></script>
+<script type="text/javascript">
+    getSearchBox("Project", "Search");
+</script>
+
+<h2>Projects</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Project Name
+        </th>
+        <th>
+            Total issues
+        </th>
+        <th>
+            Controls
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectName)
+        </td>
+        <td>
+            @item.IssueEntries.Count()
+        </td>
+        <td>
+            <div class="control-group">
+                <a href="@Url.Action("Edit", "Project", new { id = item.ProjectId })"><img class="control-icon" src="../../Content/themes/base/images/theme_black_tools.png" /></a>
+                <a href="@Url.Action("Details", "Project", new { id = item.ProjectId })"><img class="control-icon" src="../../Content/themes/base/images/theme_black_list.png" /></a>    
+                <a href="@Url.Action("IssuesByProject", "Issue", new { projectId = item.ProjectId }, null)"><img class="control-icon" src="../../Content/themes/base/images/theme_black_bug.png" /></a>
+                <a href="@Url.Action("Delete", "Project", new { id = item.ProjectId })"><img class="control-icon" src="../../Content/themes/base/images/theme_black_trash.png" /></a>
+            </div>
+        </td>
+    </tr>
+}
+
+</table>

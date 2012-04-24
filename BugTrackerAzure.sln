@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Web Developer Express 2010
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "BugTrackerAzure", "BugTrackerAzure\BugTrackerAzure.ccproj", "{40A08838-9C91-472A-8F84-A5C1FA9B4948}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTracker", "BugTracker\BugTracker.csproj", "{19992B8E-9682-41E9-9E53-724B44BB2910}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40A08838-9C91-472A-8F84-A5C1FA9B4948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A08838-9C91-472A-8F84-A5C1FA9B4948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A08838-9C91-472A-8F84-A5C1FA9B4948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A08838-9C91-472A-8F84-A5C1FA9B4948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19992B8E-9682-41E9-9E53-724B44BB2910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19992B8E-9682-41E9-9E53-724B44BB2910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19992B8E-9682-41E9-9E53-724B44BB2910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19992B8E-9682-41E9-9E53-724B44BB2910}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

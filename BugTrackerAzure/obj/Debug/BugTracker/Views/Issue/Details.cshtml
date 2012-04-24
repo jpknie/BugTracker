@@ -1,0 +1,35 @@
+﻿@model BugTracker.Models.IssueEntry
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>IssueEntry</legend>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">Priority</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IssuePriority.PriorityName)
+    </div>
+
+    <div class="display-label">IsSolved</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsSolved)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "EditIssueOnProject", "Issue", new { issueId = Model.IssueEntryId }, null) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

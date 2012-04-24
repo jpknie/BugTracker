@@ -1,0 +1,517 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body {
+    //background-color: #5c87b2;
+    background-image:url('../Content/themes/base/images/theme_black_stripe_bg.png');
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+
+a:link {
+    color: #034af3;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #505abc;
+}
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #12eb87;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    color: #000;
+}
+
+h1 {
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    padding: 0 0 10px 0;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+.topbar
+{
+    position:fixed;
+    height: 40px;
+    top:0;
+    right:0;
+    left:0;
+    z-index:1000;
+    -webkit-box-shadow:0 2px 3px rgba(0,0,0,.25);
+    -moz-box-shadow:0 2px 3px rgba(0,0,0,.25);
+    box-shadow:0 2px 3px rgba(0,0,0,.25);
+    background-image:url('../Content/themes/base/images/theme_black_topbar_bg.png'); background-repeat: repeat-x;
+}
+
+.topbar .account-menu 
+{
+    float: right;
+    position:relative; 
+    width:50px;
+    height:50px;
+    z-index:999
+    margin-right: 140px;
+}
+
+.topbar .current-user
+{
+    float: right;
+    margin-right: 50px;
+}
+
+.topbar .account-name
+{
+    position: relative;
+    float: left;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.topbar .myissues 
+{
+    position: relative;
+    float: right;
+    height: 40px;
+}
+
+.topbar .myissues #issuecounter
+{
+    background-color:#FF0000;
+    color: White;
+}
+
+.topbar .account-menu .account-menu-settings-icon 
+{
+    position: relative;
+    float: inherit;
+    display: block;
+    width: 32px;
+    height: 32px;
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+.topbar .account-menu-top
+{
+    display:block; 
+    padding:0 22px 0 5px; 
+    //border-radius:5px; 
+    //-moz-border-radius:5px; 
+    //-webkit-border-radius:5px;
+    font-weight: bold;
+    color: #BBB;
+    margin-top: 0px;
+    height: 40px;
+    
+}
+
+.topbar .account-menu-top:hover
+{
+    //background-color:rgba(105,105,105,.2);
+    background-color:rgba(255,255,255,.7);
+    //background-color:#696969;
+    //background-color:#fff;
+}
+
+.topbar .account-menu-dropdown 
+{
+    //background-color:#174979; 
+    //background-color:rgba(22,70,115,.6); 
+    background-color:#696969;
+    background-color:rgba(105,105,105,.9);
+    display:none; 
+    margin-top:0px; 
+    min-width:145px; 
+    padding:5px; 
+    position:absolute; 
+    right:0; 
+    border-radius:5px 0 5px 5px; 
+    -moz-border-radius:5px 0 5px 5px; 
+    -webkit-border-radius:5px 0 5px 5px;
+}
+
+.topbar .account-menu-dropdown-inner
+{
+    background-color:rgba(255,255,255,.9);
+    //background-color:#fff;
+    display:none; 
+    margin-top:0px; 
+    min-width:145px; 
+    padding:5px; 
+    position:absolute; 
+    right:0; 
+    border-radius:5px 0 5px 5px; 
+    -moz-border-radius:5px 0 5px 5px; 
+    -webkit-border-radius:5px 0 5px 5px;
+    -moz-border-radius:5px; 
+    -webkit-border-radius: z-index:1000;
+    -webkit-box-shadow:0 2px 3px rgba(0,0,0,.25);
+    -moz-box-shadow:0 2px 3px rgba(0,0,0,.25);
+    box-shadow: 0 2px 3px rgba(0,0,0,.25);
+    
+}
+
+.topbar .account-menu-dropdown-inner ul
+{
+    list-style: none;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+    padding: 0px;
+    line-height: 1;
+}
+
+.topbar .account-menu-links a 
+{
+    color: #4588c8; 
+    display: block; 
+    font-weight: normal; 
+    padding: 9px 0 9px 10px; 
+    border-bottom: 1px solid #ccdcef
+    text-decoration: none;
+}
+
+.topbar .account-menu-logout
+{
+    background-color: #e5ecf3; 
+    border-radius: 0 0 5px 5px; 
+    -moz-border-radius:0 0 5px 5px; 
+    -webkit-border-radius:0 0 5px 5px;
+}
+
+.control-icon
+{
+    width: 20px;
+    height: 20px;
+    margin-right:10px;
+}
+
+td .control-group
+{
+    float: right;
+}
+
+.group
+{
+    display: block
+}
+
+.group:after 
+{
+    clear: both; 
+    content: "."; 
+    display: block; 
+    height:0; visibility:hidden
+}
+
+/*\*/.group 
+{
+    min-height:1%
+}
+
+* html .group
+{
+    height:1%
+}/**/
+
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+header, #header {
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+}
+
+header h1, #header h1 {
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-size: 32px !important;
+    text-shadow: 1px 1px 2px #111;
+}
+
+#main {
+    padding: 30px 30px 15px 30px;
+    background-color: #fff;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+}
+
+footer, 
+#footer {
+    background-color: #fff;
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0 0 30px 0;
+    font-size: .9em;
+    border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu {
+    border-bottom: 1px #5C87B2 solid;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;
+    text-align: right;
+}
+
+ul#menu li {
+    display: inline;
+    list-style: none;
+}
+
+ul#menu li#greeting {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #fff;
+}
+
+ul#menu li a {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #e8eef4;
+    color: #034af3;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+}
+
+ul#menu li a:hover {
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul#menu li a:active {
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+ul#menu li.selected a {
+    background-color: #fff;
+    color: #000;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+input[type="text"], 
+input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 200px;
+}
+
+select {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+}
+
+input[type="submit"] {
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+table a 
+{
+    text-decoration: none;
+}
+table {
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 5px;
+    border: solid 1px #e8eef4;
+}
+
+table th {
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+    text-align: center;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear {
+    clear: both;
+}
+
+.error {
+    color: Red;
+}
+
+nav, 
+#menucontainer {
+    margin-top: 40px;
+}
+
+div#title {
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+#logindisplay {
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 10px;
+    color: White;
+}
+
+#logindisplay a:link {
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:visited {
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, 
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.display-field, 
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+.text-box {
+    width: 30em;
+}
+
+.text-box.multi-line {
+    height: 6.5em;
+}
+
+.tri-state {
+    width: 6em;
+}
